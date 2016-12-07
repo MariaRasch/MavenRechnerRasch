@@ -18,11 +18,15 @@ import static org.junit.Assert.*;
  */
 public class RechnerTest {
     
+    private static Rechner instance;
+   
     public RechnerTest() {
+        
     }
     
     @BeforeClass
     public static void setUpClass() {
+        instance = new Rechner();
     }
     
     @AfterClass
@@ -46,10 +50,9 @@ public class RechnerTest {
         System.out.println("addieren");
         double z1 = 6.0;
         double z2 = 4.0;
-        Rechner instance = new Rechner();
-        double expResult = 10;
+        double expResult = 10.0;
         double result = instance.addieren(z1, z2);
-        assertEquals(expResult, result, 10.0);
+        assertEquals(expResult, result, 0.0);
         fail("The test case is a prototype.");
     }
 
@@ -61,7 +64,6 @@ public class RechnerTest {
         System.out.println("subtrahieren");
         double z1 = 0.0;
         double z2 = 0.0;
-        Rechner instance = new Rechner();
         double expResult = 0.0;
         double result = instance.subtrahieren(z1, z2);
         assertEquals(expResult, result, 0.0);
@@ -76,7 +78,6 @@ public class RechnerTest {
         System.out.println("multiplizieren");
         double z1 = 0.0;
         double z2 = 0.0;
-        Rechner instance = new Rechner();
         double expResult = 0.0;
         double result = instance.multiplizieren(z1, z2);
         assertEquals(expResult, result, 0.0);
@@ -90,9 +91,8 @@ public class RechnerTest {
     public void testDividieren() {
         System.out.println("dividieren");
         double z1 = 0.0;
-        double z2 = 0.0;
-        Rechner instance = new Rechner();
-        double expResult = 1.388889;
+        double z2 = 1.0;
+        double expResult = 0.0;
         double result = instance.dividieren(z1, z2);
         assertEquals(expResult, result, 0.0);
         fail("The test case is a prototype.");
